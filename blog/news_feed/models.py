@@ -18,6 +18,7 @@ class Page(models.Model, DateTimeMixin):
     class Meta:
         verbose_name = "Page"
         verbose_name_plural = "Pages"
+        ordering = ["title"]
 
 
 
@@ -32,5 +33,6 @@ class Post(models.Model, DateTimeMixin):
     class Meta:
         verbose_name = "Post"
         verbose_name_plural = "Posts"
+        ordering = ["name"]
 
 

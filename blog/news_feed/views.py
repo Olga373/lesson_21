@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView, DeleteView, CreateView, U
 
 from .models import Page, Post
 
+
 def say_hello(request):
     return HttpResponse("Hello")
 
@@ -20,4 +21,21 @@ class PostCreateView(CreateView):
     model = Post
     fields = ["name", "content", "page"]
     template_name = "post_create.html"
+    success_url = "/"
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = "post_detail.html"
+
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = "post_update.html"
+    fields = ["name", "content"]
+    success_url = "/"
+
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = "post_delete.html"
     success_url = "/"
