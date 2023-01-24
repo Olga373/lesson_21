@@ -39,3 +39,28 @@ class PostDeleteView(DeleteView):
     model = Post
     template_name = "post_delete.html"
     success_url = "/"
+
+
+class PageCreateView(CreateView):
+    model = Page
+    fields = ["title", "description", "owner", "is_private"]
+    template_name = "page_create.html"
+    success_url = "/"
+
+class PageDetailView(DetailView):
+    model = Page
+    template_name = "page_detail.html"
+
+
+class PageUpdateView(UpdateView):
+    model = Page
+    template_name = "page_update.html"
+    fields = ["title", "description"]
+    success_url = "/"
+
+
+class PageDeleteView(DeleteView):
+    model = Page
+    template_name = "page_delete.html"
+    success_url = "/"
+
