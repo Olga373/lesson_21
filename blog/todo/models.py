@@ -1,6 +1,7 @@
 from django.db import models
 
 class TodoListItem(models.Model):
+
     content = models.CharField(max_length=255)
 
     def __str__(self):
